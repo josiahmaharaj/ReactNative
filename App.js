@@ -1,12 +1,32 @@
 import React, { Component } from "react";
-import { Image } from "react-native";
+import { View, Text } from "react-native";
+import { createStackNavigator } from "react-navigation";
 
-export default class Bananas extends Component {
+// SCREENS
+import HomeScreen from "./screens/HomeScreen";
+import DetailsScreen from "./screens/DetailsScreen";
+
+const RootStack = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Details: DetailsScreen
+  },
+  {
+    initialRouteName: "Home",
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: "#fff"
+      },
+      headerTintColor: "#000",
+      headerTitleStyle: {
+        fontWeight: "bold"
+      }
+    }
+  }
+);
+
+export default class App extends Component {
   render() {
-    let pic = {
-      uri:
-        "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg"
-    };
-    return <Image source={pic} style={{ width: 193, height: 110 }} />;
+    return <RootStack />;
   }
 }
