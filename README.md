@@ -1,42 +1,7 @@
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
-Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
-
-## Table of Contents
-
-* [Updating to New Releases](#updating-to-new-releases)
-* [Available Scripts](#available-scripts)
-  * [npm start](#npm-start)
-  * [npm test](#npm-test)
-  * [npm run ios](#npm-run-ios)
-  * [npm run android](#npm-run-android)
-  * [npm run eject](#npm-run-eject)
-* [Writing and Running Tests](#writing-and-running-tests)
-* [Environment Variables](#environment-variables)
-  * [Configuring Packager IP Address](#configuring-packager-ip-address)
-* [Customizing App Display Name and Icon](#customizing-app-display-name-and-icon)
-* [Sharing and Deployment](#sharing-and-deployment)
-  * [Publishing to Expo's React Native Community](#publishing-to-expos-react-native-community)
-  * [Building an Expo "standalone" app](#building-an-expo-standalone-app)
-  * [Ejecting from Create React Native App](#ejecting-from-create-react-native-app)
-    * [Build Dependencies (Xcode & Android Studio)](#build-dependencies-xcode-android-studio)
-    * [Should I Use ExpoKit?](#should-i-use-expokit)
-* [Troubleshooting](#troubleshooting)
-  * [Networking](#networking)
-  * [iOS Simulator won't open](#ios-simulator-wont-open)
-  * [QR Code does not scan](#qr-code-does-not-scan)
-
-## Updating to New Releases
-
-You should only need to update the global installation of `create-react-native-app` very rarely, ideally never.
-
-Updating the `react-native-scripts` dependency of your app should be as simple as bumping the version number in `package.json` and reinstalling your project's dependencies.
-
-Upgrading to a new version of React Native requires updating the `react-native`, `react`, and `expo` package versions, and setting the correct `sdkVersion` in `app.json`. See the [versioning guide](https://github.com/react-community/create-react-native-app/blob/master/VERSIONS.md) for up-to-date information about package version compatibility.
-
-## Available Scripts
-
-If Yarn was installed when the project was initialized, then dependencies will have been installed via Yarn, and you should probably use it to run these commands as well. Unlike dependency installation, command running syntax is identical for Yarn and NPM at the time of this writing.
+#About
+React Native Playground
 
 ### `npm start`
 
@@ -116,6 +81,7 @@ REACT_NATIVE_PACKAGER_HOSTNAME='my-custom-ip-address-or-hostname' npm start
 ```
 
 Windows:
+
 ```
 set REACT_NATIVE_PACKAGER_HOSTNAME='my-custom-ip-address-or-hostname'
 npm start
@@ -184,9 +150,9 @@ If you're not able to load the `http` URL in your phone's web browser, try using
 
 If you're on a Mac, there are a few errors that users sometimes see when attempting to `npm run ios`:
 
-* "non-zero exit code: 107"
-* "You may need to install Xcode" but it is already installed
-* and others
+- "non-zero exit code: 107"
+- "You may need to install Xcode" but it is already installed
+- and others
 
 There are a few steps you may want to take to troubleshoot these kinds of errors:
 
