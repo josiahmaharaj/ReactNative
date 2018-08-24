@@ -3,8 +3,8 @@ import HomeScreen from "./HomeScreen.js";
 import MainScreenNavigator from "../ChatScreen/index.js";
 import Profile from "../ProfileScreen/index.js";
 import SideBar from "../SideBar/SideBar.js";
-import { DrawerNavigator } from "react-navigation";
-const HomeScreenRouter = DrawerNavigator(
+import { createDrawerNavigator } from "react-navigation";
+const HomeScreenRouter = createDrawerNavigator(
   {
     Home: { screen: HomeScreen },
     Chat: { screen: MainScreenNavigator },

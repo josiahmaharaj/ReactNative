@@ -19,14 +19,14 @@ export default class SideBar extends React.Component {
               alignItems: "center"
             }}
           >
-            <Image
+            {/* <Image
               square
               style={{ height: 80, width: 70 }}
               source={{
                 uri:
                   "https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/react-navigation/img/logo.png"
               }}
-            />
+            /> */}
           </Image>
           <List
             dataArray={routes}
