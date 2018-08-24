@@ -1,53 +1,25 @@
-import React from "react";
-import { Text, View } from "react-native";
-import { createBottomTabNavigator } from "react-navigation";
-import Ionicons from "react-native-vector-icons/Ionicons";
-``;
-
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Home!</Text>
-      </View>
-    );
+import React, { Component } from "react";
+import Expo from "expo";
+import HomeScreen from "./src/HomeScreen/index.js";
+export default class AwesomeApp extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isReady: false
+    };
   }
-}
-
-class SettingsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Settings!</Text>
-      </View>
-    );
+  async componentWillMount() {
+    await Expo.Font.loadAsync({
+      Roboto: require("native-base/Fonts/Roboto.ttf"),
+      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
+      Ionicons: require("native-base/Fonts/Ionicons.ttf")
+    });
+    this.setState({ isReady: true });
   }
-}
-
-export default createBottomTabNavigator(
-  {
-    Home: HomeScreen,
-    Settings: SettingsScreen
-  },
-  {
-    navigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, tintColor }) => {
-        const { routeName } = navigation.state;
-        let iconName;
-        if (routeName === "Home") {
-          iconName = `ios-information-circle${focused ? "" : "-outline"}`;
-        } else if (routeName === "Settings") {
-          iconName = `ios-options${focused ? "" : "-outline"}`;
-        }
-
-        // You can return any component that you like here! We usually use an
-        // icon component from react-native-vector-icons
-        return <Ionicons name={iconName} size={25} color={tintColor} />;
-      }
-    }),
-    tabBarOptions: {
-      activeTintColor: "tomato",
-      inactiveTintColor: "gray"
+  render() {
+    if (!this.state.isReady) {
+      return <Expo.AppLoading />;
     }
+    return <HomeScreen />;
   }
-);
+}
